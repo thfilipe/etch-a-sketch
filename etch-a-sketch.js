@@ -1,6 +1,11 @@
-const div = document.createElement('div');
-const body = document.querySelector('body');
-div.classList.add('grid');
-div.textContent = 'This be div';
+const container = document.getElementById('container');
 
-body.appendChild(div)
+
+
+for (let i = 0; i < 16; i++) {
+    const divGrid = document.createElement('div');
+    divGrid.classList.add('grid');
+    divGrid.style.cssText = 'border: solid; width: 50px; height: 50px;'
+    container.appendChild(divGrid)
+}
+
