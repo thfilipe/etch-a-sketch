@@ -1,6 +1,6 @@
 const container = document.getElementById('container');
 
-
+// create 16 by 16 boxes
 for (let i = 0; i < 16; i++) {
     for (let i = 0; i < 16; i++) {
         const box = document.createElement('div');
@@ -10,14 +10,15 @@ for (let i = 0; i < 16; i++) {
     }
 }
 
+
+
+
 const grid = document.querySelectorAll('.grid');
 
 grid.forEach(box => {
-    box.addEventListener('click', function onClick(e) {
+    box.addEventListener('mouseover', function onClick(e) {
         e.target.style.backgroundColor = 'salmon';
     });
+
 });
-// const colorGrid = document.querySelector('div');
-// colorGrid.addEventListener('click', function onClick(e) {
-//     e.target.style.backgroundColor = 'salmon';
-// });
+
