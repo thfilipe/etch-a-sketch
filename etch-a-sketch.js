@@ -10,8 +10,13 @@ for (let i = 0; i < 16; i++) {
     }
 }
 
+const grid = document.querySelectorAll('.grid');
 
-
+grid.forEach(box => {
+    box.addEventListener('click', function onClick(e) {
+        e.target.style.backgroundColor = 'salmon';
+    });
+});
 // const colorGrid = document.querySelector('div');
 // colorGrid.addEventListener('click', function onClick(e) {
 //     e.target.style.backgroundColor = 'salmon';
