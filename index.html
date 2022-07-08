@@ -11,11 +11,11 @@
     <div id="toolbar">
         <button onclick="changeColour('black')">Black</button>
         <button onclick="changeColour('white')">Eraser</button>
-        <button onclick="changeColour(randomColour())">Rainbow</button>
-        <form>
-            <input type="text" id="gridsize" name="gridsize"><br>
-            <button>Set size</button>
-        </form>
+        <button onclick="changeColour('rainbow')">Rainbow</button>
+        <br>
+        <input type="text" id="gridsize" value="" />
+        <br />
+        <button onclick="createGrid(gridSize())" id="gridsizeButton">Set Grid Size</button>
     </div>
 
     <div id="board"></div>
