@@ -16,13 +16,13 @@ function createGrid(size) {
     }
 }
 
-createGrid(gridSize)
+createGrid(40);
 
 function changeGridSize(input) {
-    if (input >= 2 || input <= 100) {
+    if (input >= 2 && input <= 100) {
         createGrid(input);
     } else {
-        console.log("invalid input")
+        alert("Please enter a number between 2-100");
     }
 
 }
@@ -48,6 +48,9 @@ function randomColour() {
     return `#${randColour.toUpperCase()}`
 }
 
+function reset() {
+    createGrid(40);
+}
 function gridSize() {
     var value = document.getElementById('gridsize').value;
     return value;

@@ -12,10 +12,11 @@
         <button onclick="changeColour('black')">Black</button>
         <button onclick="changeColour('white')">Eraser</button>
         <button onclick="changeColour('rainbow')">Rainbow</button>
+        <button onclick="reset()">Clear</button>
         <br>
         <input type="text" id="gridsize" value="" />
         <br />
-        <button onclick="createGrid(gridSize())" id="gridsizeButton">Set Grid Size</button>
+        <button onclick="changeGridSize(gridSize())" id="gridsizeButton">Set Grid Size</button>
     </div>
 
     <div id="board"></div>
