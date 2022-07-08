@@ -34,6 +34,17 @@ h1 {
 
 }
 
+#gridsize {
+    width: 100px;
+}
+
+#toolbar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+
+}
+
 #board {
     display: grid;
     width: 500px;
