@@ -1,4 +1,5 @@
 let colour = "black";
+let draw = false
 
 function createGrid(size) {
     const board = document.getElementById('board');
@@ -10,13 +11,12 @@ function createGrid(size) {
     const amount = size * size
     for (let i = 0; i < amount; i++) {
         let box = document.createElement('div');
-        box.addEventListener('mouseover', boxColour); // colour box on mouseover
+        box.addEventListener('mouseover', boxColour); // colour box
         box.style.backgroundColor = "white";
         board.insertAdjacentElement("beforeend", box);
     }
 }
 
-createGrid(40);
 
 function changeGridSize(input) {
     if (input >= 2 && input <= 100) {
@@ -28,10 +28,12 @@ function changeGridSize(input) {
 }
 
 function boxColour() {
-    if (colour === "rainbow") {
-        this.style.backgroundColor = randomColour();
-    } else {
-        this.style.backgroundColor = colour;
+    if (draw) {
+        if (colour === "rainbow") {
+            this.style.backgroundColor = randomColour();
+        } else {
+            this.style.backgroundColor = colour;
+        }
     }
 }
 
@@ -51,9 +53,17 @@ function randomColour() {
 function reset() {
     createGrid(40);
 }
+
+// grid size buttons
 function gridSize() {
     var value = document.getElementById('gridsize').value;
     return value;
 }
 
+// default grid
+createGrid(40);
 
+// enable drawing with click
+document.getElementById('board').addEventListener('click', () => {
+    draw = !draw;
+});
