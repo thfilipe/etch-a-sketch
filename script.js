@@ -1,3 +1,5 @@
+let colour = "black";
+
 function createGrid(size) {
     const board = document.getElementById('board');
     const boxs = board.querySelectorAll('div');
@@ -8,20 +10,30 @@ function createGrid(size) {
     const amount = size * size
     for (let i = 0; i < amount; i++) {
         let box = document.createElement('div');
-        box.style.backgroundColor = "red";
+        box.addEventListener('mouseover', boxColour); // colour box on mouseover
+        box.style.backgroundColor = "white";
         board.insertAdjacentElement("beforeend", box);
     }
 }
 
 createGrid(40)
 
-function changeSize(input) {
-    if (input >= || input <= 100) {
+function changeGridSize(input) {
+    if (input >= 2 || input <= 100) {
         createGrid(input);
+    } else {
+        console.log("invalid input")
     }
 
 }
 
+function boxColour() {
+    this.style.backgroundColor = colour;
+}
+
+function changeColour(change) {
+    colour = change;
+}
 
 
 
