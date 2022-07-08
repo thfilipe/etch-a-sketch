@@ -28,23 +28,26 @@ function changeGridSize(input) {
 }
 
 function boxColour() {
-    this.style.backgroundColor = colour;
+    if (colour === "rainbow") {
+        this.style.backgroundColor = randomColour();
+    } else {
+        this.style.backgroundColor = colour;
+    }
 }
 
 function changeColour(change) {
     colour = change;
 }
 
+function randomColour() {
+    let maxVal = 0xFFFFFF;
+    let randomNumber = Math.random() * maxVal;
+    randomNumber = Math.floor(randomNumber);
+    randomNumber = randomNumber.toString(16);
+    let randColour = randomNumber.padStart(6, 0);
+    return `#${randColour.toUpperCase()}`
+}
 
 
-
-// const grid = document.querySelectorAll('.grid');
-
-// grid.forEach(box => {
-//     box.addEventListener('mouseover', function onClick(e) {
-//         e.target.style.backgroundColor = 'salmon';
-//     });
-
-// });
 
 
