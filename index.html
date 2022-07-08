@@ -9,12 +9,12 @@
 
 <body>
     <div id="toolbar">
-        <button>Black</button>
-        <button>Eraser</button>
-        <button>Rainbow</button>
+        <button onclick="changeColour('black')">Black</button>
+        <button onclick="changeColour('white')">Eraser</button>
+        <button onclick="changeColour(randomColour())">Random</button>
         <form>
             <input type="text" id="gridsize" name="gridsize"><br>
-            <label for="gridsize">Set size</label><br>
+            <button>Set size</button>
         </form>
     </div>
 
