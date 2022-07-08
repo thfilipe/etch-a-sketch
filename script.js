@@ -16,7 +16,7 @@ function createGrid(size) {
     }
 }
 
-createGrid(40)
+createGrid(gridSize)
 
 function changeGridSize(input) {
     if (input >= 2 || input <= 100) {
@@ -48,6 +48,9 @@ function randomColour() {
     return `#${randColour.toUpperCase()}`
 }
 
-
+function gridSize() {
+    var value = document.getElementById('gridsize').value;
+    return value;
+}
 
 
