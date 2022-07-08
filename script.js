@@ -1,24 +1,26 @@
-function createGrid() {
+function createGrid(size) {
     const board = document.getElementById('board');
-    board.style.gridTemplateColumns = 'repeat(16, 1fr)'
-    board.style.gridTemplateRows = 'repeat(16, 1fr)'
+    const boxs = board.querySelectorAll('div');
+    boxs.forEach((div) => div.remove());
+    board.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+    board.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
-    for (let i = 0; i < 256; i++) {
+    const amount = size * size
+    for (let i = 0; i < amount; i++) {
         let box = document.createElement('div');
         box.style.backgroundColor = "red";
         board.insertAdjacentElement("beforeend", box);
     }
 }
-createGrid()
-// create 16 by 16 boxes
-//for (let i = 0; i < 16; i++) {
-// for (let i = 0; i < 16; i++) {
-//     const box = document.createElement('div');
-//     box.classList.add('column');
-//     box.style.cssText = 'height: 50px; width: 50px; background-color: blue;';
-//     board.appendChild(box);
-// }
-//}
+
+createGrid(40)
+
+function changeSize(input) {
+    if (input >= || input <= 100) {
+        createGrid(input);
+    }
+
+}
 
 
 
